@@ -1,0 +1,6 @@
+[
+  { "title": "keyv poisoned releases", "summary": "credential stealer in postinstall", "severity": "critical", "source_label": "Example Research", "reference_urls": ["https://example.org/keyv"], "published_at": "2026-10-09T13:10:00Z", "kind": "poisoned_release", "window": { "from": "2026-10-08T22:00:00Z", "to": "2026-10-09T06:00:00Z" }, "remediation": "Pin keyv to 5.7.1 and rotate tokens exposed to CI.",
+    "packages": [{ "ecosystem": "npm", "package_name": "keyv", "affected_versions": "5.7.2, 5.7.3" }, { "ecosystem": "npm", "package_name": "cacheable", "affected_versions": ">=2.1.0 <2.1.3" }] },
+  { "title": "trivy-action tags hijacked", "summary": "tags force-pushed to a credential stealer", "severity": "critical", "source_label": "Example Research", "reference_urls": ["https://example.org/trivy"], "published_at": "2026-03-19T12:00:00Z", "kind": "hijacked_tag", "window": { "from": "2026-03-19T00:00:00Z", "to": "2026-03-19T12:00:00Z" }, "remediation": "Pin to a known-good commit SHA and rotate CI secrets.",
+    "packages": [{ "ecosystem": "github actions", "package_name": "aquasecurity/trivy-action", "affected_versions": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef", "exposed_refs": ["0.28.0", "master"] }] }
+]

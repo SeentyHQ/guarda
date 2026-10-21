@@ -1,0 +1,14 @@
+lockfileVersion: '6.0'
+dependencies:
+  keyv:
+    specifier: ^5.7.2
+    version: 5.7.2
+packages:
+  /keyv@5.7.2:
+    resolution: {integrity: sha512-x}
+    dev: false
+  /@scope/pkg@1.0.0(react@18.2.0):
+    resolution: {integrity: sha512-z}
+    dev: false
+  /local@link:../local:
+    resolution: {directory: ../local, type: directory}

@@ -1,0 +1,35 @@
+name: release
+# Publishes @seenty/guarda to npm with provenance when a v* tag is pushed.
+# Needs the NPM_TOKEN secret (automation token of the seenty org) until npm trusted publishing is set up.
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci --ignore-scripts
+      - run: npm run typecheck && npm run build && npm test
+      - run: test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
+      # A tag for a version that is already on npm (the first tags of this repo, or a re-run) is not an error:
+      # the checks above still run, only the publish is skipped.
+      - id: registry
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if npm view "@seenty/guarda@${version}" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::@seenty/guarda@${version} is already on npm; nothing to publish"
+          fi
+      - if: steps.registry.outputs.published != 'true'
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

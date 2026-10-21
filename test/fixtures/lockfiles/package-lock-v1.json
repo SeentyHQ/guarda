@@ -1,0 +1,9 @@
+{
+  "name": "fixture", "version": "1.0.0", "lockfileVersion": 1, "requires": true,
+  "dependencies": {
+    "keyv": { "version": "5.7.2", "resolved": "https://registry.npmjs.org/keyv/-/keyv-5.7.2.tgz",
+      "requires": { "json-buffer": "3.0.1" },
+      "dependencies": { "json-buffer": { "version": "3.0.1", "resolved": "https://registry.npmjs.org/json-buffer/-/json-buffer-3.0.1.tgz" } } },
+    "@scope/pkg": { "version": "1.0.0", "resolved": "https://registry.npmjs.org/@scope/pkg/-/pkg-1.0.0.tgz" }
+  }
+}

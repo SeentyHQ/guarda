@@ -1,0 +1,5 @@
+[
+  { "title": "bad range", "severity": "high", "packages": [{ "ecosystem": "npm", "package_name": "x", "affected_versions": ">1.2.3" }] },
+  { "title": "bad ecosystem", "severity": "high", "packages": [{ "ecosystem": "hex", "package_name": "y", "affected_versions": "1.0.0" }] },
+  { "title": "missing fields", "packages": [] }
+]

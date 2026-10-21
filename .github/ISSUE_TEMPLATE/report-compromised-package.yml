@@ -1,0 +1,22 @@
+name: Report a compromised package
+description: Tell us about a poisoned release, hijacked tag or malicious package so it can be added to the Guarda feed.
+title: "Compromised package: "
+labels: [advisory-report]
+body:
+  - type: input
+    id: package
+    attributes: { label: Package or action, description: "ecosystem:name@version(s), e.g. npm:keyv@5.7.2,5.7.3 or github-actions:owner/repo@sha", placeholder: "npm:name@1.2.3" }
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes: { label: Evidence, description: Links to the report, the diff, the registry page, or your own analysis. }
+    validations: { required: true }
+  - type: input
+    id: window
+    attributes: { label: Time window, description: "When was it published and when was it pulled (UTC)?" }
+  - type: textarea
+    id: remediation
+    attributes: { label: What should affected users do? }
+  - type: checkboxes
+    id: credit
+    attributes: { label: Credit, options: [{ label: You may credit my GitHub handle in the advisory }] }

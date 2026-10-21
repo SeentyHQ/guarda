@@ -1,0 +1,9 @@
+Guarda
+Copyright 2026 Seenty
+
+This product includes detection patterns derived from:
+- Betterleaks (https://github.com/betterleaks/betterleaks), MIT License
+- Veles, part of OSV-SCALIBR (https://github.com/google/osv-scalibr), Apache License 2.0
+The feed built by scripts/build-feed.ts redistributes records from
+OpenSSF Malicious Packages (https://github.com/ossf/malicious-packages),
+Apache License 2.0, with their original identifiers.

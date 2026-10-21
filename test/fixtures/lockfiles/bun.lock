@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": { "name": "fixture", "dependencies": { "keyv": "^5.7.2" } },
+    "packages/lib": { "name": "lib" },
+  },
+  "packages": {
+    "keyv": ["keyv@5.7.2", "", { "dependencies": { "json-buffer": "3.0.1" } }, "sha512-x"],
+    "json-buffer": ["json-buffer@3.0.1", "", {}, "sha512-y"],
+    "@scope/pkg": ["@scope/pkg@1.0.0", "", {}, "sha512-z"],
+    "keyv/json-buffer": ["json-buffer@2.0.0", "", {}, "sha512-w"],
+    "lib": ["lib@workspace:packages/lib"],
+  }
+}

@@ -1,0 +1,13 @@
+services:
+  test:
+    build: .
+    image: guarda-test
+  scan:
+    build: .
+    image: guarda-test
+    volumes:
+      - ${TARGET:-.}:/target:ro
+      - ${FEED:-./.feed-out}:/feed:ro
+    environment:
+      GUARDA_FEED_PUBKEY: ${GUARDA_FEED_PUBKEY:-}
+    command: ["node", "dist/bin.js", "scan", "/target", "--feed", "/feed", "--json"]

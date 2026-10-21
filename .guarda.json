@@ -1,0 +1,1 @@
+{ "ignore": ["src/secrets/rules.ts", "test/**"] }

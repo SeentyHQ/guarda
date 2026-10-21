@@ -1,0 +1,11 @@
+{
+  "_meta": { "hash": { "sha256": "x" }, "pipfile-spec": 6 },
+  "default": {
+    "litellm": { "hashes": ["sha256:abc"], "index": "pypi", "version": "==1.107.0" },
+    "requests": { "version": "==2.32.3" },
+    "local-thing": { "path": "." }
+  },
+  "develop": {
+    "pytest": { "version": "==8.3.3" }
+  }
+}

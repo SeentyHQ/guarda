@@ -1,0 +1,17 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
+      - uses: aquasecurity/trivy-action@0.28.0
+      - uses: ./.github/actions/local
+      - uses: docker://alpine:3.20
+      - uses: actions/github-script@v7
+      - uses: owner/repo/path/to/action@refs/heads/main
+      - uses: ${{ matrix.action }}
+      - run: echo done
+  reuse:
+    uses: org/workflows/.github/workflows/shared.yml@v2

@@ -1,0 +1,10 @@
+# pinned app dependencies
+litellm==1.107.0
+requests == 2.32.3  # trailing comment
+Django[argon2]==5.1.2 ; python_version >= "3.10"
+-r dev.txt
+--index-url https://pypi.org/simple
+flask>=3.0
+numpy~=2.1
+./local-package
+git+https://github.com/x/y.git#egg=y
